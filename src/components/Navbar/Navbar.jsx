@@ -2,11 +2,37 @@ import React, { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+
+   const navAnim  = () => {
+      const tl = gsap.timeline()
+  
+      tl.from("nav", {
+        y:-30,
+        opacity:0,
+        duration:1,
+      })
+      
+      tl.from(".navTabs li", {
+        y:-30,
+        opacity:0,
+        duration:0.5,
+        stagger:0.2
+      },"-=0.5")
+    }
+    
+  
+    useGSAP(() => {
+      navAnim()
+    })
+
 
   const navElement = [
     { id: "about", title: "About" },
@@ -39,13 +65,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 backdrop-blur-2xl w-full text-white font-bold flex justify-around text-[13px] h-15 items-center`}
+      className={`nav fixed top-0 z-50 backdrop-blur-2xl w-full text-white font-bold flex justify-around text-[13px] h-15 items-center`}
     >
       <div>
         <span className="text-[15px]">Aryan Dhirhi</span>
       </div>
       <div>
-        <ul className="hidden md:flex gap-5 ">
+        <ul className="navTabs hidden md:flex gap-5 ">
           {navElement.map((item) => (
             <li
               onClick={() => handleNavLink(item.id)}

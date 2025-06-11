@@ -8,6 +8,7 @@ import Work from "./components/Work/Work"
 import Education from "./components/Education/Education"
 import Footer from "./components/Footer/Footer"
 import BlurBlob from "./BlurBlob"
+import Logos from "./components/Logos"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Education/>
         <Contact/>
         <Footer/>
+        <Logos />
       </div>
     </div>
   )
