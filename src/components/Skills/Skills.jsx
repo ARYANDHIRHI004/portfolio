@@ -1,11 +1,69 @@
 import React from "react";
 import { SkillsInfo } from "../../constents.js";
 import Tilt from "react-parallax-tilt";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Skills = () => {
+
+  useGSAP(() => {
+      gsap.from(".skills",{
+        x:-80,
+        opacity:0,
+        scrollTrigger:{
+          trigger:".skills",
+          scroll:"body",
+          scrub:1,
+          markers:true
+        }
+      }) 
+      
+      gsap.utils.toArray('.evenCard').forEach(card=>{
+        
+        gsap.from(card,{
+          x:80,
+          opacity:0,
+          scrollTrigger:{
+            trigger:card,
+            scroll:"body",
+            scrub:1,
+            markers:true,
+          },
+          // stagger:0.2
+        }) 
+      })
+
+      gsap.utils.toArray('.oddCard').forEach(card=>{
+        
+        gsap.from(card,{
+        x:-80,
+        opacity:0,
+        scrollTrigger:{
+          trigger:card,
+          scroll:"body",
+          scrub:1,
+          markers:true
+        },
+      }) 
+      })
+
+      
+      
+
+
+  })
+
+
+
+
+
+
   return (
     <section id="skills" className="mt-20 bg-[linear-gradient(38.73deg,#8e1d29_0%,#0000_30%),linear-gradient(141.27deg,#050414_70%,#8e1d29_100%)] clip-path-custom pb-30 ">
-      <div className="text-white font-bold text-center ">
+      <div className="skills text-white font-bold text-center ">
         <h1 className="text-4xl ">SKILLS</h1>
         <div className="h-1 w-17 bg-[#8e1d29] m-auto"></div>
         <p className="text-gray-400">
@@ -25,7 +83,7 @@ const Skills = () => {
           >
             <div
               key={Skills.title}
-              className="bg-gray-800 md:w-150 min-h-80 outline-2 outline-[#8e1d29] outline-offset-2  rounded-3xl mt-10 hover:drop-shadow-[0px_0px_30px_#8e1d29] hover:transition delay-100 "
+              className={`bg-gray-800 md:w-150 min-h-80 outline-2 outline-[#8e1d29] outline-offset-2  rounded-3xl mt-10 hover:drop-shadow-[0px_0px_30px_#8e1d29] hover:transition delay-100 ${Skills.id%2===0?("evenCard"):("oddCard")} `}
             >
               <h2 className="text-center text-2xl pt-5 text-white">
                 {Skills.title}

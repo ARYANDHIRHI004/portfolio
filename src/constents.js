@@ -58,6 +58,7 @@ import removebgLogo from './assets/work_logo/remove_bg.png';
 
 export const SkillsInfo = [
   {
+    id:1,
     title: 'Frontend',
     skills: [
       { name: 'HTML', logo: htmlLogo },
@@ -73,6 +74,7 @@ export const SkillsInfo = [
     ],
   },
   {
+    id:2,
     title: 'Backend',
     skills: [
       { name: 'Springboot', logo: springbootLogo },
@@ -85,6 +87,7 @@ export const SkillsInfo = [
     ],
   },
   {
+    id:3,
     title: 'Languages',
     skills: [
       { name: 'C', logo: cLogo },
@@ -96,6 +99,7 @@ export const SkillsInfo = [
     ],
   },
   {
+    id:4,
     title: 'Tools',
     skills: [
       { name: 'Git', logo: gitLogo },
