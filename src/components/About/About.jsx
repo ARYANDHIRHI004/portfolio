@@ -17,7 +17,7 @@ const About = () => {
 
     gsap.from(".myImg", {
       opacity:0,
-      duration:2,
+      duration:1,
       scale:0.8
     })
 
@@ -47,10 +47,10 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pt-45 text-white flex flex-col-reverse gap-5 md:flex-row justify-around items-center w-[80vw] mx-auto "
+      className="pt-45 text-white flex flex-col-reverse gap-5 xl:flex-row justify-around items-center w-[80vw] mx-auto "
     >
       
-      <div className=" nameHeading text-4xl text-center sm:text-6xl  font-bold">
+      <div className=" nameHeading  text-center font-bold text-[40px] max-sm:text-[20px]">
         Hi, I am <span className="text-[#8e1d29]"> Aryan Dhirhi</span>
         <div className="mt-5 mb-5">and I am a Passionate</div>{" "}
         <span className="text-[#8e1d29]" ref={el} />

@@ -21,15 +21,15 @@ const Logos = () => {
 
         gsap.from(".css", { 
             y:" 10vw", 
-            x:"-20vw",
             opacity:0, 
             delay:0.2,
             duration:0.7
-
-        });
-
-        gsap.from(".react", { 
+            
+          });
+          
+          gsap.from(".react", { 
             y:" 10vw", 
+            x:"-20vw",
             opacity:0, 
             delay:0.2,
             duration:0.7
@@ -53,10 +53,10 @@ const Logos = () => {
 
   return (
     <div className="w-50">
-      <img className="html absolute top-40 left-50 w-30" src={html} alt="" />
-      <img className=" css absolute top-30 left-250 w-30" src={css} alt="" />
-      <img className=" react absolute top-20 left-150 w-30" src={react} alt="" />
-      <img className=" nodejs absolute top-150 left-130 w-30" src={nodejs} alt="" />
+      <img className="html absolute top-40 left-[10vw] xl:left-[10vw] w-[5vw]" src={html} alt="" />
+      <img className=" css absolute top-30 left-[40vw] xl:left-[27vw] w-[5vw]" src={css} alt="" />
+      <img className=" react absolute top-35 left-[80vw] xl:left-[45vw] w-[5vw]" src={react} alt="" />
+      <img className=" nodejs absolute top-150 left-[18vw] xl:left-[27vw] w-[5vw]" src={nodejs} alt="" />
     </div>
   );
 };
